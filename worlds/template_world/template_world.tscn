@@ -54,3 +54,5 @@ environment = SubResource("Environment_ios5s")
 
 [node name="main_voxel_gi_volume" type="VoxelGI" parent="."]
 data = ExtResource("1_1tkvm")
+
+[node name="camera" type="Camera3D" parent="."]
