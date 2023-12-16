@@ -20,6 +20,12 @@ config/windows_native_icon="res://icon.ico"
 formats/zlib/compression_level=6
 formats/gzip/compression_level=6
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
+
 [filesystem]
 
 import/blender/enabled=false
