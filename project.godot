@@ -24,6 +24,10 @@ formats/gzip/compression_level=6
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="res://ui/themes/godot_template_theme.tres"
+
 [rendering]
 
 driver/threads/thread_model=2
