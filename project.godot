@@ -14,3 +14,8 @@ config/name="Godot Template"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 config/windows_native_icon="res://icon.ico"
+
+[compression]
+
+formats/zlib/compression_level=6
+formats/gzip/compression_level=6
