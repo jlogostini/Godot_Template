@@ -20,6 +20,10 @@ config/windows_native_icon="res://icon.ico"
 formats/zlib/compression_level=6
 formats/gzip/compression_level=6
 
+[filesystem]
+
+import/blender/enabled=false
+
 [rendering]
 
 driver/threads/thread_model=2
