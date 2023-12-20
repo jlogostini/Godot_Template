@@ -1,8 +1,9 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://ch3fupore16xx"]
 
 [resource]
+line_spacing = -35.0
 font_size = 90
-outline_size = 5
+outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 15
 shadow_color = Color(0, 0, 0, 0.196078)
