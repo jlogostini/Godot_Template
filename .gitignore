@@ -11,6 +11,7 @@ android/build/assetPacks*
 android/build/libs*
 android/build/gradle
 !android/build/build.gradle
+!android/build/assetPacks/installTime/build.gradle
 
 # Autosaves
 *.blend*
