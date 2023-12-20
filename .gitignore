@@ -3,6 +3,16 @@
 
 # Builds
 /build/*
+android/build/*
+!android/.build_version
+!android/build/AndroidManifest.xml
+!android/build/.gdignore
+!android/build/android_icon.xcf
+!android/build/main.png
+!android/build/adaptive_foregroundad.png
+!android/build/adaptive_background.png
+!android/build/debug.keystore
+!android/build/release.keystore
 
 # Autosaves
 *.blend*
