@@ -5,14 +5,16 @@
 /build/*
 
 # Android
-.gradle/
-local.properties
-*.iml
-.gradletasknamecache
-project.properties
-platform/android/java/*/.cxx/
-platform/android/java/*/build/
-platform/android/java/*/libs/
+android/build/*
+!android/.build_version
+!android/build/android_icon.xcf
+!android/build/main.png
+!android/build/adaptive_foregroundad.png
+!android/build/adaptive_background.png
+!android/build/release.keystore
+!android/build/debug.keystore
+!android/build/AndroidManifest.xml
+!android/.gdignore
 
 # Autosaves
 *.blend*
