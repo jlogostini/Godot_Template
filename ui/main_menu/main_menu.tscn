@@ -29,10 +29,14 @@ layout_mode = 2
 
 [node name="play_button" type="Button" parent="margin_container/vertical_box_container"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../quit_button")
+focus_next = NodePath("../quit_button")
 text = "Play"
 
 [node name="quit_button" type="Button" parent="margin_container/vertical_box_container"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../play_button")
+focus_previous = NodePath("../play_button")
 text = "Quit"
 
 [node name="logo_label" type="Label" parent="."]
