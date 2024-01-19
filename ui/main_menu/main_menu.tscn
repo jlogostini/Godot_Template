@@ -29,14 +29,32 @@ layout_mode = 2
 
 [node name="play_button" type="Button" parent="margin_container/vertical_box_container"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../options_button")
+focus_next = NodePath("../options_button")
+focus_previous = NodePath("../quit_button")
+text = "Play"
+
+[node name="options_button" type="Button" parent="margin_container/vertical_box_container"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../play_button")
+focus_neighbor_bottom = NodePath("../extras_button")
+focus_next = NodePath("../extras_button")
+focus_previous = NodePath("../play_button")
+text = "Options"
+
+[node name="extras_button" type="Button" parent="margin_container/vertical_box_container"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../options_button")
 focus_neighbor_bottom = NodePath("../quit_button")
 focus_next = NodePath("../quit_button")
-text = "Play"
+focus_previous = NodePath("../options_button")
+text = "Extras"
 
 [node name="quit_button" type="Button" parent="margin_container/vertical_box_container"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../play_button")
-focus_previous = NodePath("../play_button")
+focus_neighbor_top = NodePath("../extras_button")
+focus_next = NodePath("../play_button")
+focus_previous = NodePath("../extras_button")
 text = "Quit"
 
 [node name="logo_label" type="Label" parent="."]
@@ -86,6 +104,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="margin_container/vertical_box_container/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="margin_container/vertical_box_container/multiplayer_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="margin_container/vertical_box_container/options_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="margin_container/vertical_box_container/quit_button" to="." method="_on_quit_button_pressed"]

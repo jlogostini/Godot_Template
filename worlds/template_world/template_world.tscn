@@ -7,13 +7,13 @@ sky_top_color = Color(0.266667, 0.592157, 0.741176, 1)
 sky_horizon_color = Color(0.552941, 0.682353, 0.717647, 1)
 sun_angle_max = 77.7
 
-[sub_resource type="Sky" id="Sky_tpf50"]
+[sub_resource type="Sky" id="Sky_k1npg"]
 sky_material = SubResource("ProceduralSkyMaterial_dbotm")
 process_mode = 1
 
 [sub_resource type="Environment" id="Environment_ios5s"]
 background_mode = 2
-sky = SubResource("Sky_tpf50")
+sky = SubResource("Sky_k1npg")
 tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
