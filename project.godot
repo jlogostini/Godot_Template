@@ -109,7 +109,7 @@ ch_look_right={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
-ui={
+ui_pause={
 "deadzone": 0.5,
 "events": []
 }
