@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://8fp0it47gmkj"]
+[gd_scene load_steps=7 format=3 uid="uid://8fp0it47gmkj"]
 
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="1_fuysp"]
 [ext_resource type="LabelSettings" uid="uid://ch3fupore16xx" path="res://ui/main_menu/data/label/logo_label_settings.tres" id="2_6udfm"]
 [ext_resource type="LabelSettings" uid="uid://cjf1yqk5dqppv" path="res://ui/main_menu/data/label/info_label_settings.tres" id="2_ipip5"]
 [ext_resource type="PackedScene" uid="uid://dndx1yviryfj5" path="res://ui/navigation_menu/navigation_menu.tscn" id="4_2d2c6"]
 [ext_resource type="PackedScene" uid="uid://tycyx6lcxkql" path="res://ui/options_menu/options_menu.tscn" id="4_tg4sr"]
+[ext_resource type="PackedScene" uid="uid://bcifvkdxa3t3v" path="res://ui/extras_menu/extras_menu.tscn" id="5_gt2rl"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -126,9 +127,14 @@ vertical_alignment = 1
 visible = false
 layout_mode = 1
 
+[node name="extras_menu" parent="." instance=ExtResource("5_gt2rl")]
+visible = false
+layout_mode = 1
+
 [node name="navigation_menu" parent="." instance=ExtResource("4_2d2c6")]
 layout_mode = 1
 
 [connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/extras_button" to="." method="_on_extras_button_pressed"]
 [connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/quit_button" to="." method="_on_quit_button_pressed"]
