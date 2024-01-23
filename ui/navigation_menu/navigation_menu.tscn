@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dndx1yviryfj5"]
+[gd_scene load_steps=4 format=3 uid="uid://dndx1yviryfj5"]
 
 [ext_resource type="Texture2D" uid="uid://c03ap5pj4y3lf" path="res://ui/icons/input/playstation5/cross.svg" id="1_527tg"]
-[ext_resource type="Texture2D" uid="uid://c1xkwpq60iqob" path="res://GamePad_UI_Ref.jpg" id="1_f2eka"]
 [ext_resource type="Texture2D" uid="uid://cvahltvnoc1xr" path="res://ui/icons/input/playstation5/circle.svg" id="1_w1vwq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3ii0m"]
@@ -15,13 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GamePadUiRef" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 540)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_f2eka")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="prompts_horizontal_box" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -32,28 +25,28 @@ offset_right = 237.0
 offset_bottom = -24.0
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="select_icon" type="TextureRect" parent="prompts_horizontal_box"]
 layout_mode = 2
 texture = ExtResource("1_527tg")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="select_label" type="Label" parent="prompts_horizontal_box"]
 layout_mode = 2
 text = "Select"
 label_settings = SubResource("LabelSettings_3ii0m")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+[node name="spacer" type="HBoxContainer" parent="prompts_horizontal_box"]
 custom_minimum_size = Vector2(16.34, 2.08165e-12)
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+[node name="back_icon" type="TextureRect" parent="prompts_horizontal_box"]
 layout_mode = 2
 texture = ExtResource("1_w1vwq")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Label2" type="Label" parent="HBoxContainer"]
+[node name="back_label" type="Label" parent="prompts_horizontal_box"]
 layout_mode = 2
 text = "Back"
 label_settings = SubResource("LabelSettings_3ii0m")
