@@ -51,5 +51,7 @@ Thumbs.db
 # Mono-specific ignores
 .mono/
 data_*/
+mono_crash.*.json
+
 # Reference from non Open Source games
 reference
