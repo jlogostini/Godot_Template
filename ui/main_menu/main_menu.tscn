@@ -17,58 +17,71 @@ script = ExtResource("1_fuysp")
 
 [node name="main_menu" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="margin_container" type="MarginContainer" parent="main_menu"]
+[node name="buttons_container" type="MarginContainer" parent="main_menu"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 59.0
-offset_top = 487.0
-offset_right = 375.0
-offset_bottom = 772.0
+offset_left = 88.0
+offset_top = -52.0
+offset_right = 402.0
+offset_bottom = 84.0
 grow_vertical = 2
 
-[node name="vertical_box_container" type="VBoxContainer" parent="main_menu/margin_container"]
+[node name="buttons_vertical_box" type="VBoxContainer" parent="main_menu/buttons_container"]
 layout_mode = 2
 
-[node name="play_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
+[node name="play_button" type="Button" parent="main_menu/buttons_container/buttons_vertical_box"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../options_button")
 focus_next = NodePath("../options_button")
 focus_previous = NodePath("../quit_button")
 text = "Play"
+alignment = 0
+expand_icon = true
 
-[node name="options_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
+[node name="options_button" type="Button" parent="main_menu/buttons_container/buttons_vertical_box"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../play_button")
 focus_neighbor_bottom = NodePath("../extras_button")
 focus_next = NodePath("../extras_button")
 focus_previous = NodePath("../play_button")
 text = "Options"
+alignment = 0
 
-[node name="extras_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
+[node name="extras_button" type="Button" parent="main_menu/buttons_container/buttons_vertical_box"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../options_button")
 focus_neighbor_bottom = NodePath("../quit_button")
 focus_next = NodePath("../quit_button")
 focus_previous = NodePath("../options_button")
 text = "Extras"
+alignment = 0
 
-[node name="quit_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
+[node name="quit_button" type="Button" parent="main_menu/buttons_container/buttons_vertical_box"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../extras_button")
 focus_next = NodePath("../play_button")
 focus_previous = NodePath("../extras_button")
 text = "Quit"
+alignment = 0
 
 [node name="logo_label" type="Label" parent="main_menu"]
 layout_mode = 1
-offset_left = 55.0
-offset_top = 66.0
-offset_right = 504.0
-offset_bottom = 279.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -364.0
+offset_right = 537.0
+offset_bottom = -151.0
+grow_vertical = 2
 text = "Godot
 Template"
 label_settings = ExtResource("2_6udfm")
@@ -77,15 +90,14 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="version_label" type="Label" parent="main_menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = 987.0
-offset_right = 237.0
-offset_bottom = 1015.0
+offset_left = 24.0
+offset_top = -92.0
+offset_right = 236.0
+offset_bottom = -64.0
 grow_vertical = 0
 text = "Godot Template: 1.2.0"
 label_settings = ExtResource("2_ipip5")
@@ -99,10 +111,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1698.0
-offset_top = 987.0
-offset_right = 1855.0
-offset_bottom = 1015.0
+offset_left = -181.0
+offset_top = -56.0
+offset_right = -24.0
+offset_bottom = -28.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Copyright: CC0"
@@ -117,6 +129,6 @@ layout_mode = 1
 [node name="navigation_menu" parent="." instance=ExtResource("4_2d2c6")]
 layout_mode = 1
 
-[connection signal="pressed" from="main_menu/margin_container/vertical_box_container/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="main_menu/margin_container/vertical_box_container/options_button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="main_menu/margin_container/vertical_box_container/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="main_menu/buttons_container/buttons_vertical_box/quit_button" to="." method="_on_quit_button_pressed"]
