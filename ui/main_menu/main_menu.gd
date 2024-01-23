@@ -3,7 +3,7 @@ extends Control
 @onready var main_menu = $main_menu 
 @onready var options_menu = $options_menu 
 
-var useingoptions = false
+var options_menu_active = false
 
 func _ready():
 	$main_menu/buttons_container/buttons_vertical_box/play_button.grab_focus()
@@ -15,15 +15,15 @@ func _on_options_button_pressed():
 	main_menu.visible = false
 	options_menu.visible = true
 	$options_menu/VBoxContainer/resolution_button.grab_focus()
-	useingoptions = true
+	options_menu_active = true
 
 func _input(event):
-	if useingoptions:
+	if options_menu_active:
 		if Input.is_action_just_pressed("ui_cancel"):
 			main_menu.visible = true
 			options_menu.visible = false
 			$main_menu/buttons_container/buttons_vertical_box/options_button.grab_focus()
-			useingoptions = false
+			options_menu_active = false
 
 func _on_quit_button_pressed():
 	get_tree().quit()
