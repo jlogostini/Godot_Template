@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://8fp0it47gmkj"]
+[gd_scene load_steps=6 format=3 uid="uid://8fp0it47gmkj"]
 
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="1_fuysp"]
 [ext_resource type="LabelSettings" uid="uid://ch3fupore16xx" path="res://ui/main_menu/data/label/logo_label_settings.tres" id="2_6udfm"]
 [ext_resource type="LabelSettings" uid="uid://cjf1yqk5dqppv" path="res://ui/main_menu/data/label/info_label_settings.tres" id="2_ipip5"]
+[ext_resource type="PackedScene" uid="uid://dndx1yviryfj5" path="res://ui/navigation_menu/navigation_menu.tscn" id="4_2d2c6"]
+[ext_resource type="PackedScene" uid="uid://tycyx6lcxkql" path="res://ui/options_menu/options_menu.tscn" id="4_tg4sr"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -13,28 +15,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fuysp")
 
-[node name="margin_container" type="MarginContainer" parent="."]
+[node name="main_menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="margin_container" type="MarginContainer" parent="main_menu"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 59.0
-offset_top = -33.0
+offset_top = 487.0
 offset_right = 375.0
-offset_bottom = 252.0
+offset_bottom = 772.0
 grow_vertical = 2
 
-[node name="vertical_box_container" type="VBoxContainer" parent="margin_container"]
+[node name="vertical_box_container" type="VBoxContainer" parent="main_menu/margin_container"]
 layout_mode = 2
 
-[node name="play_button" type="Button" parent="margin_container/vertical_box_container"]
+[node name="play_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../options_button")
 focus_next = NodePath("../options_button")
 focus_previous = NodePath("../quit_button")
 text = "Play"
 
-[node name="options_button" type="Button" parent="margin_container/vertical_box_container"]
+[node name="options_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../play_button")
 focus_neighbor_bottom = NodePath("../extras_button")
@@ -42,7 +48,7 @@ focus_next = NodePath("../extras_button")
 focus_previous = NodePath("../play_button")
 text = "Options"
 
-[node name="extras_button" type="Button" parent="margin_container/vertical_box_container"]
+[node name="extras_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../options_button")
 focus_neighbor_bottom = NodePath("../quit_button")
@@ -50,14 +56,14 @@ focus_next = NodePath("../quit_button")
 focus_previous = NodePath("../options_button")
 text = "Extras"
 
-[node name="quit_button" type="Button" parent="margin_container/vertical_box_container"]
+[node name="quit_button" type="Button" parent="main_menu/margin_container/vertical_box_container"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../extras_button")
 focus_next = NodePath("../play_button")
 focus_previous = NodePath("../extras_button")
 text = "Quit"
 
-[node name="logo_label" type="Label" parent="."]
+[node name="logo_label" type="Label" parent="main_menu"]
 layout_mode = 1
 offset_left = 55.0
 offset_top = 66.0
@@ -70,32 +76,33 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="version_label" type="Label" parent="."]
+[node name="version_label" type="Label" parent="main_menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 25.0
-offset_top = -53.0
+offset_top = 987.0
 offset_right = 237.0
-offset_bottom = -25.0
+offset_bottom = 1015.0
 grow_vertical = 0
 text = "Godot Template: 1.2.0"
 label_settings = ExtResource("2_ipip5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="copyright_label" type="Label" parent="."]
+[node name="copyright_label" type="Label" parent="main_menu"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -182.0
-offset_top = -53.0
-offset_right = -25.0
-offset_bottom = -25.0
+offset_left = 1698.0
+offset_top = 987.0
+offset_right = 1855.0
+offset_bottom = 1015.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Copyright: CC0"
@@ -103,5 +110,13 @@ label_settings = ExtResource("2_ipip5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="margin_container/vertical_box_container/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="margin_container/vertical_box_container/quit_button" to="." method="_on_quit_button_pressed"]
+[node name="options_menu" parent="." instance=ExtResource("4_tg4sr")]
+visible = false
+layout_mode = 1
+
+[node name="navigation_menu" parent="." instance=ExtResource("4_2d2c6")]
+layout_mode = 1
+
+[connection signal="pressed" from="main_menu/margin_container/vertical_box_container/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="main_menu/margin_container/vertical_box_container/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="main_menu/margin_container/vertical_box_container/quit_button" to="." method="_on_quit_button_pressed"]
