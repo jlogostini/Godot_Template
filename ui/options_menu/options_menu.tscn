@@ -11,28 +11,543 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nhuys")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="confirmation_container" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -522.0
+offset_top = -80.0
+offset_right = -64.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="discard_changes_button" type="Button" parent="confirmation_container"]
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+text = "Discard Changes"
+
+[node name="detect_settings_button" type="Button" parent="confirmation_container"]
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+text = "Detect Settings"
+
+[node name="apply_button" type="Button" parent="confirmation_container"]
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+text = "Apply"
+
+[node name="graphics_menu" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -348.0
+offset_right = 960.0
+offset_bottom = 292.0
+grow_vertical = 2
+horizontal_scroll_mode = 3
+
+[node name="graphics_menu_container" type="VBoxContainer" parent="graphics_menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="display_category" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="display_category_label" type="Label" parent="graphics_menu/graphics_menu_container/display_category"]
+layout_mode = 2
+text = "Display"
+uppercase = true
+
+[node name="display_mode" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="display_mode_label" type="Label" parent="graphics_menu/graphics_menu_container/display_mode"]
+layout_mode = 2
+text = "Display Mode:"
+
+[node name="display_mode_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/display_mode"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="display_mode_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/display_mode"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="display_mode_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/display_mode"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="display_adapter" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="display_adapter_label" type="Label" parent="graphics_menu/graphics_menu_container/display_adapter"]
+layout_mode = 2
+text = "Display Adapter:"
+
+[node name="display_adapter_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/display_adapter"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="display_adapter_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/display_adapter"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="display_mode_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/display_adapter"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="fullscreen_display" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="fullscreen_display_label" type="Label" parent="graphics_menu/graphics_menu_container/fullscreen_display"]
+layout_mode = 2
+text = "Fullscreen Display:"
+
+[node name="fullscreen_display_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/fullscreen_display"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fullscreen_display_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/fullscreen_display"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="display_mode_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/fullscreen_display"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="output_resolution" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="output_resolution_label" type="Label" parent="graphics_menu/graphics_menu_container/output_resolution"]
+layout_mode = 2
+text = "Output Resolution:"
+
+[node name="output_resolution_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/output_resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="output_resolution_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/output_resolution"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="display_mode_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/output_resolution"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="resolution_scale" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="resolution_scale_label" type="Label" parent="graphics_menu/graphics_menu_container/resolution_scale"]
+layout_mode = 2
+text = "Resolution Scale:"
+
+[node name="resolution_scale_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/resolution_scale"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="resolution_scale_current_label" type="Label" parent="graphics_menu/graphics_menu_container/resolution_scale"]
+layout_mode = 2
+text = "2560x1440"
+
+[node name="resolution_scale_slider" type="HSlider" parent="graphics_menu/graphics_menu_container/resolution_scale"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 200.0
+value = 100.0
+
+[node name="resolution_scale_percentage_label" type="Label" parent="graphics_menu/graphics_menu_container/resolution_scale"]
+layout_mode = 2
+text = "100%"
+
+[node name="resolution_scale_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/resolution_scale"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="fps_limit" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="fps_limit_label" type="Label" parent="graphics_menu/graphics_menu_container/fps_limit"]
+layout_mode = 2
+text = "FPS Limit:"
+
+[node name="fps_limit_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/fps_limit"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fps_limit_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/fps_limit"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="fps_limit_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/fps_limit"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="vsync" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="vsync_label" type="Label" parent="graphics_menu/graphics_menu_container/vsync"]
+layout_mode = 2
+text = "VSync:"
+
+[node name="vsync_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/vsync"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="vsync_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/vsync"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="vsync_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/vsync"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="graphics_category" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="graphics_category_label" type="Label" parent="graphics_menu/graphics_menu_container/graphics_category"]
+layout_mode = 2
+text = "Graphics"
+uppercase = true
+
+[node name="anti_aliasing" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="anti_aliasing_label" type="Label" parent="graphics_menu/graphics_menu_container/anti_aliasing"]
+layout_mode = 2
+text = "Anti-Aliasing:"
+
+[node name="anti_aliasing_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/anti_aliasing"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="anti_aliasing_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/anti_aliasing"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="anti_aliasing_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/anti_aliasing"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="post_processing" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="post_processing_label" type="Label" parent="graphics_menu/graphics_menu_container/post_processing"]
+layout_mode = 2
+text = "Post Processing:"
+
+[node name="post_processing_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/post_processing"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="post_processing_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/post_processing"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="post_processing_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/post_processing"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="lighting" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="lighting_label" type="Label" parent="graphics_menu/graphics_menu_container/lighting"]
+layout_mode = 2
+text = "Lighting:"
+
+[node name="lighting_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/lighting"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lighting_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/lighting"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="lighting_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/lighting"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="reflections" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="reflections_label" type="Label" parent="graphics_menu/graphics_menu_container/reflections"]
+layout_mode = 2
+text = "Reflections:"
+
+[node name="reflections_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/reflections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="reflections_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/reflections"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="reflections_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/reflections"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="global_illumination" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="global_illumination_label" type="Label" parent="graphics_menu/graphics_menu_container/global_illumination"]
+layout_mode = 2
+text = "Global Illumination:"
+
+[node name="global_illumination_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/global_illumination"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="global_illumination_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/global_illumination"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="global_illumination_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/global_illumination"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="shadows" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="shadows_label" type="Label" parent="graphics_menu/graphics_menu_container/shadows"]
+layout_mode = 2
+text = "Shadows:"
+
+[node name="shadows_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/shadows"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="shadows_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/shadows"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="shadows_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/shadows"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="ambient_occlusion" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="ambient_occlusion_label" type="Label" parent="graphics_menu/graphics_menu_container/ambient_occlusion"]
+layout_mode = 2
+text = "Ambient Occlusion:"
+
+[node name="ambient_occlusion_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/ambient_occlusion"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ambient_occlusion_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/ambient_occlusion"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="ambient_occlusion_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/ambient_occlusion"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="volumetrics" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="volumetrics_label" type="Label" parent="graphics_menu/graphics_menu_container/volumetrics"]
+layout_mode = 2
+text = "Volumetrics:"
+
+[node name="volumetrics_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/volumetrics"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="volumetrics_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/volumetrics"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="volumetrics_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/volumetrics"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="texture_quality" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="texture_quality_label" type="Label" parent="graphics_menu/graphics_menu_container/texture_quality"]
+layout_mode = 2
+text = "Texture Quality:"
+
+[node name="texture_quality_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/texture_quality"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="texture_quality_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/texture_quality"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="texture_quality_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/texture_quality"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="anisotropic_filtering" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="anisotropic_filtering_label" type="Label" parent="graphics_menu/graphics_menu_container/anisotropic_filtering"]
+layout_mode = 2
+text = "Anisotropic Filtering:"
+
+[node name="anisotropic_filtering_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/anisotropic_filtering"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="anisotropic_filtering_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/anisotropic_filtering"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="anisotropic_filtering_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/anisotropic_filtering"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="depth_of_field" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="depth_of_field_label" type="Label" parent="graphics_menu/graphics_menu_container/depth_of_field"]
+layout_mode = 2
+text = "Depth of field:"
+
+[node name="depth_of_field_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/depth_of_field"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="depth_of_field_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/depth_of_field"]
+custom_minimum_size = Vector2(192, 2.08165e-12)
+layout_mode = 2
+flat = true
+clip_text = true
+
+[node name="depth_of_field_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/depth_of_field"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="vram_usage" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -912.0
-offset_top = -368.0
-offset_right = -88.0
-offset_bottom = 368.0
+offset_left = -896.0
+offset_top = 132.0
+offset_right = -128.0
+offset_bottom = 292.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="resolution_button" type="OptionButton" parent="VBoxContainer"]
+[node name="vram_usage_info" type="VBoxContainer" parent="vram_usage"]
 layout_mode = 2
 
-[node name="window_button" type="OptionButton" parent="VBoxContainer"]
+[node name="vram_usage_info_container" type="HBoxContainer" parent="vram_usage/vram_usage_info"]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+[node name="vram_usage_label" type="Label" parent="vram_usage/vram_usage_info/vram_usage_info_container"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "VRAM Usage:"
+
+[node name="vram_usage_spacer" type="HBoxContainer" parent="vram_usage/vram_usage_info/vram_usage_info_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="current_vram_usage" type="VBoxContainer" parent="vram_usage/vram_usage_info/vram_usage_info_container"]
 layout_mode = 2
 
-[connection signal="item_selected" from="VBoxContainer/resolution_button" to="." method="_on_res_option_button_item_selected"]
-[connection signal="item_selected" from="VBoxContainer/window_button" to="." method="_on_window_button_item_selected"]
+[node name="current_vram_usage_label" type="Label" parent="vram_usage/vram_usage_info/vram_usage_info_container/current_vram_usage"]
+layout_mode = 2
+text = "Current"
+
+[node name="current_vram_usage_value" type="Label" parent="vram_usage/vram_usage_info/vram_usage_info_container/current_vram_usage"]
+layout_mode = 2
+text = "19.39 GB"
+
+[node name="current_vram_usage_spacer" type="HBoxContainer" parent="vram_usage/vram_usage_info/vram_usage_info_container"]
+custom_minimum_size = Vector2(60, 2.08165e-12)
+layout_mode = 2
+
+[node name="max_vram" type="VBoxContainer" parent="vram_usage/vram_usage_info/vram_usage_info_container"]
+layout_mode = 2
+
+[node name="max_vram_label" type="Label" parent="vram_usage/vram_usage_info/vram_usage_info_container/max_vram"]
+layout_mode = 2
+text = "Max"
+
+[node name="max_vram_value" type="Label" parent="vram_usage/vram_usage_info/vram_usage_info_container/max_vram"]
+layout_mode = 2
+text = "24.24 GB"
+
+[node name="vram_usage_info_end_spacer" type="HBoxContainer" parent="vram_usage/vram_usage_info/vram_usage_info_container"]
+custom_minimum_size = Vector2(8, 2.08165e-12)
+layout_mode = 2
+
+[node name="vram_usage_info_spacer" type="VBoxContainer" parent="vram_usage/vram_usage_info"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+
+[node name="vram_usage_progress_bar" type="ProgressBar" parent="vram_usage"]
+layout_mode = 2
+
+[connection signal="pressed" from="confirmation_container/apply_button" to="." method="_on_apply_button_pressed"]
+[connection signal="item_selected" from="graphics_menu/graphics_menu_container/display_mode/display_mode_button" to="." method="_on_display_mode_button_item_selected"]
