@@ -417,25 +417,25 @@ clip_text = true
 custom_minimum_size = Vector2(8, 2.08165e-12)
 layout_mode = 2
 
-[node name="texture_quality" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
+[node name="textures" type="HBoxContainer" parent="graphics_menu/graphics_menu_container"]
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 
-[node name="texture_quality_label" type="Label" parent="graphics_menu/graphics_menu_container/texture_quality"]
+[node name="textures_label" type="Label" parent="graphics_menu/graphics_menu_container/textures"]
 layout_mode = 2
-text = "Texture Quality:"
+text = "Textures:"
 
-[node name="texture_quality_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/texture_quality"]
+[node name="textures_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/textures"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="texture_quality_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/texture_quality"]
+[node name="textures_button" type="OptionButton" parent="graphics_menu/graphics_menu_container/textures"]
 custom_minimum_size = Vector2(192, 2.08165e-12)
 layout_mode = 2
 flat = true
 clip_text = true
 
-[node name="texture_quality_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/texture_quality"]
+[node name="textures_end_spacer" type="HBoxContainer" parent="graphics_menu/graphics_menu_container/textures"]
 custom_minimum_size = Vector2(8, 2.08165e-12)
 layout_mode = 2
 
