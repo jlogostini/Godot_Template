@@ -2,8 +2,7 @@ extends CharacterBody3D
 class_name character
 
 @export_category("Camera")
-@export var mouse_sensitivity = 5.0
-@export var controller_sensitivity = 5.0
+@export var camera_sensitivity = 5.0
 @export var rotation_speed = 5.0
 
 @export_category("Movement")
@@ -42,11 +41,11 @@ func get_move_input(delta):
  
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		spring_arm.rotation.x -= event.relative.y * mouse_sensitivity*0.0003
+		spring_arm.rotation.x -= event.relative.y * camera_sensitivity*0.0003
 		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 50.0)
-		spring_arm.rotation.y -= event.relative.x * mouse_sensitivity*0.0003
+		spring_arm.rotation.y -= event.relative.x * camera_sensitivity*0.0003
 
 func _process(delta):
-		spring_arm.rotation.y -= Input.get_axis("ch_look_left", "ch_look_right") * controller_sensitivity*0.005
+		spring_arm.rotation.y -= Input.get_axis("ch_look_left", "ch_look_right") * camera_sensitivity*0.005
 		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 50.0)
-		spring_arm.rotation.x -= Input.get_axis("ch_look_up", "ch_look_down") * controller_sensitivity*0.005
+		spring_arm.rotation.x -= Input.get_axis("ch_look_up", "ch_look_down") * camera_sensitivity*0.005
