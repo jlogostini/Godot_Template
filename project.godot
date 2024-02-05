@@ -16,6 +16,7 @@ run/main_scene="res://ui/main_menu/main_menu.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=144
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 config/windows_native_icon="res://icon.ico"
 
