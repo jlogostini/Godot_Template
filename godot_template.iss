@@ -1,5 +1,5 @@
 #define MyAppName "Godot Template"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.2.0"
 #define MyAppPublisher "Godot Foundation"
 #define MyAppURL "https://godotengine.org/"
 #define MyAppExeName "Godot Template.exe"
@@ -15,7 +15,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName="C:\Program Files (x86)\Steam\steamapps\common\{#MyAppName} NSB"
 DisableProgramGroupPage=yes
 LicenseFile=LICENSE
-OutputDir=build\windows\installers
+OutputDir=build\windows\installer\x86_64
 OutputBaseFilename={#MyAppName} {#MyAppVersion} Installer
 SetupIconFile=icon.ico
 Compression=lzma
@@ -30,8 +30,8 @@ Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "build\windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "build\windows\Godot Template.pck"; DestDir: "{app}"; Flags: ignoreversion
+Source: "build\windows\standalone\x86_64\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "build\windows\standalone\x86_64\Godot Template.pck"; DestDir: "{app}"; Flags: ignoreversion
 Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
